@@ -40,7 +40,7 @@ namespace Plumsail.DataSource.SharePoint
 
             var queryOptions = new List<QueryOption>()
             {
-                new QueryOption("filter", "fields/Location eq 'West'"),
+                new QueryOption("filter", "fields/Location eq '{req.Query["location"]}'"),
                 new QueryOption("select", "id"),
                 new QueryOption("expand", "fields(select=Title,Author,Location)")
             };
